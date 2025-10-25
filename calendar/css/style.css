@@ -1,0 +1,482 @@
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Tajawal/Tajawal-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Tajawal/Tajawal-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Arlsan';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Arslan.ttf') format('truetype');
+}
+
+:root {
+    --font-family: 'Tajawal', sans-serif;
+    --teal: #2a9d8f;
+    --coral: #e76f51;
+    --dark-blue: #264653;
+    --gold: #e9c46a;
+    --gray: #6c757d;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+    --background-color: #ffffff;
+    --text-color: #212529;
+    --header-bg: #f8f9fa;
+    --footer-bg: #f8f9fa;
+    --danger-color: #dc3545;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.user-select-none {
+    user-select: none;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#section-selector {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-family: var(--font-family);
+}
+
+.main-controls button {
+    font-family: var(--font-family);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--teal);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.main-controls button:hover {
+    background-color: #248a7f;
+}
+
+.main-controls button:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 150px);
+}
+
+#subjects-panel {
+    width: 250px;
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-left: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+#subjects-panel h2, #subjects-panel h3 {
+    color: var(--dark-blue);
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.subject-item {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    cursor: grab;
+    text-align: center;
+    font-weight: bold;
+}
+
+.subject-item.dragging {
+    opacity: 0.5;
+}
+
+#schedule-container {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#calendar-grid {
+    display: grid;
+    grid-template-columns: auto repeat(7, 1fr);
+    grid-template-rows: auto repeat(5, 1fr);
+    flex-grow: 1;
+    height: 100%;
+}
+
+.day-header, .time-label {
+    background-color: var(--light-gray);
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    position: relative;
+}
+
+.time-block {
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    padding: 0.5rem;
+    display: flex;
+    gap: 2px;
+    align-items: stretch;
+    position: relative;
+}
+
+.time-block.drag-over {
+    background-color: #e0f2f1;
+}
+
+.placed-subject {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: move;
+    overflow: hidden;
+}
+
+.delete-subject-btn {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.placed-subject:hover .delete-subject-btn {
+    opacity: 1;
+}
+
+.resize-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    cursor: ew-resize;
+    z-index: 1;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.template-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.template-options button {
+     font-family: var(--font-family);
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--teal);
+    border-radius: 5px;
+    background-color: white;
+    color: var(--teal);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.template-options button:hover {
+    background-color: var(--teal);
+    color: white;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #subjects-panel {
+        width: 100%;
+        border-left: none;
+        border-bottom: 1px solid var(--border-color);
+        max-height: 200px;
+    }
+
+    #schedule-container {
+        overflow-x: auto;
+    }
+
+    #calendar-grid {
+        min-width: 900px;
+    }
+}
+
+@media (max-width: 600px) {
+    .controls-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .main-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .time-block {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .placed-subject {
+        width: 100% !important; /* Override for vertical stacking */
+        height: auto;
+        padding: 0.8rem;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+#color-settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.color-setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.color-setting label {
+    font-size: 1.1rem;
+}
+
+.color-setting input[type="color"] {
+    width: 50px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.save-btn {
+    font-family: var(--font-family);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--teal);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+}
+
+.save-btn:hover {
+    background-color: #248a7f;
+}
+
+/* Custom Dialog Styles */
+#dialog-message {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#dialog-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.dialog-buttons button {
+    font-family: var(--font-family);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dialog-buttons .confirm-btn {
+    background-color: var(--teal);
+    color: white;
+}
+
+.dialog-buttons .confirm-btn:hover {
+    background-color: #248a7f;
+}
+
+.dialog-buttons .cancel-btn {
+    background-color: var(--gray);
+    color: white;
+}
+
+.dialog-buttons .cancel-btn:hover {
+    background-color: #5a6268;
+}
+
+#daily-view {
+    display: none;
+}
+
+#subjects-drawer {
+    display: none;
+}
+
+
+/* Social Footer */
+.social-footer {
+    padding: 20px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.social-footer h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer_txt {
+    font-family: "Arlsan";
+    font-size: 25px;
+}
+.by-me {
+    font-size: 20px;
+}

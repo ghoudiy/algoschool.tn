@@ -1,0 +1,53 @@
+{
+  "monday": {
+    "night": [
+      { "subject": "Algorithme", "width": 100 }
+    ]
+  },
+  "tuesday": {
+    "night": [
+      { "subject": "STI", "width": 50 },
+      { "subject": "المادة الإختيارية", "width": 50 }
+    ]
+  },
+  "wednesday": {
+    "night": [
+      { "subject": "الرّياضيات", "width": 50 },
+      { "subject": "إنقليزية", "width": 50 }
+    ]
+  },
+  "thursday": {
+    "night": [
+      { "subject": "عربية", "width": 50 },
+      { "subject": "الفيزياء", "width": 50 }
+    ]
+  },
+  "friday": {
+    "evening": [
+      { "subject": "راحة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "Algorithme", "width": 50 },
+      { "subject": "فرنسية", "width": 50 }
+    ]
+  },
+  "saturday": {
+    "evening": [
+        { "subject": "STI", "width": 100 }
+    ],
+    "night": [
+        { "subject": "الرّياضيات", "width": 100 }
+    ]
+  },
+  "sunday": {
+    "morning": [
+      { "subject": "Algorithme أو الرّياضيات", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "فلسفة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الفيزياء", "width": 100 }
+    ]
+  }
+}

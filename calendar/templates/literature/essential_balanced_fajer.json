@@ -1,0 +1,57 @@
+{
+  "monday": {
+    "fajer": [
+      { "subject": "إنقليزية", "width": 100 }
+    ],
+    "night": [
+      { "subject": "فلسفة", "width": 100 }
+    ]
+  },
+  "tuesday": {
+    "night": [
+      { "subject": "عربية", "width": 50 },
+      { "subject": "المادة الإختيارية", "width": 50 }
+    ]
+  },
+  "wednesday": {
+    "fajer": [
+      { "subject": "التفكير الإسلامي", "width": 100 }
+    ],
+    "night": [
+      { "subject": "تاريخ", "width": 100 }
+    ]
+  },
+  "thursday": {
+    "night": [
+      { "subject": "إنقليزية", "width": 50 },
+      { "subject": "فلسفة", "width": 50 }
+    ]
+  },
+  "friday": {
+    "evening": [
+        { "subject": "راحة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "جغرافيا", "width": 100 }
+    ]
+  },
+  "saturday": {
+    "evening": [
+        { "subject": "عربية", "width": 100 }
+    ],
+    "night": [
+        { "subject": "فرنسية", "width": 100 }
+    ]
+  },
+  "sunday": {
+    "fajer": [
+      { "subject": "تاريخ", "width": 100 }
+    ],
+    "dhuhr": [
+      { "subject": "جغرافيا", "width": 100 }
+    ],
+    "night": [
+      { "subject": "المواد التي أجد فيها نقص", "width": 100 }
+    ]
+  }
+}

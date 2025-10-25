@@ -1,0 +1,55 @@
+{
+  "monday": {
+    "night": [
+      { "subject": "علوم الحياة والأرض", "width": 100 }
+    ]
+  },
+  "tuesday": {
+    "night": [
+      { "subject": "الرّياضيات", "width": 50 },
+      { "subject": "إنقليزية", "width": 50 }
+    ]
+  },
+  "wednesday": {
+    "night": [
+      { "subject": "الفيزياء", "width": 50 },
+      { "subject": "المادة الإختيارية", "width": 50 }
+    ]
+  },
+  "thursday": {
+    "night": [
+      { "subject": "علوم الحياة والأرض", "width": 100 }
+    ]
+  },
+  "friday": {
+    "evening": [
+      { "subject": "راحة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الرّياضيات", "width": 50 },
+      { "subject": "عربية", "width": 50 }
+    ]
+  },
+  "saturday": {
+    "dhuhr": [
+      { "subject": "فلسفة", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "الفيزياء", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الإعلامية", "width": 100 }
+    ]
+  },
+  "sunday": {
+    "morning": [
+      { "subject": "علوم الحياة والأرض", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "فرنسية", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الفيزياء أو الرياضيات", "width": 100 }
+    ]
+  }
+}

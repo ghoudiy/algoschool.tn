@@ -1,0 +1,63 @@
+{
+  "monday": {
+    "fajer": [
+      { "subject": "علوم الحياة والأرض", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الرّياضيات", "width": 100 }
+    ]
+  },
+  "tuesday": {
+    "fajer": [
+      { "subject": "إنقليزية", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الفيزياء", "width": 100 }
+    ]
+  },
+  "wednesday": {
+    "fajer": [
+      { "subject": "فرنسية", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الرّياضيات", "width": 100 }
+    ]
+  },
+  "thursday": {
+    "night": [
+      { "subject": "علوم الحياة والأرض", "width": 50 },
+      { "subject": "الفيزياء", "width": 50 }
+    ]
+  },
+  "friday": {
+    "fajer": [
+      { "subject": "عربية", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "راحة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الرّياضيات", "width": 100 }
+    ]
+  },
+  "saturday": {
+    "evening": [
+      { "subject": "فلسفة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الفيزياء", "width": 50 },
+      { "subject": "الإعلامية", "width": 50 }
+    ]
+  },
+  "sunday": {
+    "fajer": [
+      { "subject": "الرّياضيات", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "المادة الإختيارية", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الفيزياء", "width": 100 }
+    ]
+  }
+}

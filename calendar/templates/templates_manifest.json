@@ -1,0 +1,23 @@
+{
+  "science": {
+    "essential": ["balanced"]
+  },
+  "math": {
+    "essential": ["balanced"]
+  },
+  "literature": {
+    "essential": ["balanced"]
+  },
+  "info": {
+    "essential": ["balanced"]
+  },
+  "tech": {
+    "essential": ["balanced"]
+  },
+  "eco": {
+    "essential": ["balanced"]
+  },
+  "sport": {
+    "essential": ["balanced"]
+  }
+}

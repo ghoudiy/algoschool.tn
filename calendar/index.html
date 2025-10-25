@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منظم الدراسة التونسي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+</head>
+<body>
+    <!--#include virtual="header.html" -->
+    <div id="page-content-wrapper">
+    <header>
+        <!-- <span id="brand_name">Algo School</span> -->
+        <h1>منظم الدراسة الأسبوعي</h1>
+        <div class="controls-container">
+            <div class="section-selector-container">
+                <label for="section-selector">اختر شعبتك:</label>
+                <select id="section-selector">
+                    <option value="math">رياضيات</option>
+                    <option value="science">علوم تجريبية</option>
+                    <option value="literature">آداب</option>
+                    <option value="eco">اقتصاد وتصرف</option>
+                    <option value="tech">تقنية</option>
+                    <option value="info">إعلامية</option>
+                    <option value="sport">الرّياضة</option>
+                </select>
+            </div>
+            <div class="main-controls">
+                <button id="undo-btn" title="تراجع (Ctrl+Z)" disabled>⟲</button>
+                <button id="redo-btn" title="إعادة (Ctrl+Y)" disabled>⟳</button>
+                <button id="templates-btn">قوالب</button>
+                <button id="manage-colors-btn">إدارة الألوان</button>
+                <button id="export-pdf-btn">تصدير PDF</button>
+                <button id="clear-all-btn">مسح الكل</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <aside id="subjects-panel">
+            <h2>المواد</h2>
+            <div id="subjects-list" class="subjects-list">
+                <!-- Subjects will be loaded here -->
+            </div>
+             <div id="other-subjects-list" class="subjects-list">
+                <h3>مواد أخرى</h3>
+                <!-- Other subjects will be loaded here -->
+            </div>
+        </aside>
+
+        <div id="schedule-container">
+            <div id="calendar-grid">
+                <!-- Day headers will be generated here -->
+                <!-- Time blocks will be generated here -->
+            </div>
+            <div id="daily-view">
+                 <div class="day-navigator">
+                    <button id="prev-day-btn">⟨</button>
+                    <h3 id="daily-view-date"></h3>
+                    <button id="next-day-btn">⟩</button>
+                </div>
+                <div class="daily-slots-container">
+                    <!-- Daily slots will be generated here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="subjects-drawer">
+        <div class="drawer-header">
+            <h2>اختر مادة</h2>
+            <button id="close-drawer-btn">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <!-- Cloned subjects will appear here -->
+        </div>
+    </div>
+
+    <div id="templates-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>اختر قالبًا</h2>
+            <div class="template-options">
+                <button class="template-option" data-template="scientific">تركيز علمي</button>
+                <button class="template-option" data-template="literary">تركيز أدبي</button>
+                <button class="template-option" data-template="balanced">أسبوع متوازن</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="colors-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>إدارة ألوان المواد</h2>
+            <div id="color-settings-list"></div>
+            <button id="save-colors-btn" class="save-btn">حفظ</button>
+        </div>
+    </div>
+
+    <div id="custom-dialog-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="dialog-title"></h2>
+            <p id="dialog-message"></p>
+            <input type="text" id="dialog-input" class="hidden">
+            <div id="dialog-buttons" class="dialog-buttons">
+                <!-- Buttons will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="social-footer">
+        <span class="footer_txt">
+        صنع بحب لتلاميذ البكالوريا ❤️
+        <br>
+        </span>
+        <span class="footer_txt by-me">
+            من طرف ياسين الغودي
+        </span>
+        <br>
+        <hr>
+    </footer>
+    </div>
+    <!--#include virtual="footer.html" -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>

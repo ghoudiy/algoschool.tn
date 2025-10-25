@@ -1,0 +1,53 @@
+{
+  "monday": {
+    "night": [
+      { "subject": "Électrique", "width": 100 }
+    ]
+  },
+  "tuesday": {
+    "night": [
+      { "subject": "الرّياضيات", "width": 100 },
+      { "subject": "المادة الإختيارية", "width": 50 }
+    ]
+  },
+  "wednesday": {
+    "night": [
+      { "subject": "Mécanique", "width": 50 },
+      { "subject": "إنقليزية", "width": 50 }
+    ]
+  },
+  "thursday": {
+    "night": [
+      { "subject": "عربية", "width": 50 },
+      { "subject": "الفيزياء", "width": 50 }
+    ]
+  },
+  "friday": {
+    "evening": [
+      { "subject": "راحة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "Électrique", "width": 50 },
+      { "subject": "فرنسية", "width": 50 }
+    ]
+  },
+  "saturday": {
+    "evening": [
+        { "subject": "Mécanique", "width": 100 }
+    ],
+    "night": [
+        { "subject": "الرّياضيات", "width": 100 }
+    ]
+  },
+  "sunday": {
+    "morning": [
+      { "subject": "Électrique Ou Mécanique", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "فلسفة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "الفيزياء", "width": 100 }
+    ]
+  }
+}

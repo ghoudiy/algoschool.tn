@@ -1,0 +1,61 @@
+{
+  "monday": {
+    "fajer": [
+      { "subject": "عربية", "width": 100 }
+    ],
+    "night": [
+      { "subject": "Économie", "width": 100 }
+    ]
+  },
+  "tuesday": {
+    "night": [
+      { "subject": "الرّياضيات", "width": 50 },
+      { "subject": "المادة الإختيارية", "width": 50 }
+    ]
+  },
+  "wednesday": {
+    "fajer": [
+      { "subject": "جغرافيا", "width": 100 }
+    ],
+    "night": [
+      { "subject": "Gestion", "width": 100 }
+    ]
+  },
+  "thursday": {
+    "night": [
+      { "subject": "Économie", "width": 50 },
+      { "subject": "إنقليزية", "width": 50 }
+    ]
+  },
+  "friday": {
+    "fajer": [
+      { "subject": "تاريخ", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "راحة", "width": 100 }
+    ],
+    "night": [
+      { "subject": "Gestion", "width": 100 }
+    ]
+  },
+  "saturday": {
+    "evening": [
+        { "subject": "فرنسية", "width": 50 },
+        { "subject": "فلسفة", "width": 50 }
+    ],
+    "night": [
+        { "subject": "الرّياضيات", "width": 100 }
+    ]
+  },
+  "sunday": {
+    "fajer": [
+      { "subject": "Économie", "width": 100 }
+    ],
+    "evening": [
+      { "subject": "تاريخ وجغرافيا", "width": 100 }
+    ],
+    "night": [
+      { "subject": "Gestion", "width": 100 }
+    ]
+  }
+}
